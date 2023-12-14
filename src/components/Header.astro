@@ -4,15 +4,15 @@ import removeTrailingSlash from "@/utils/removeTrailingSlash";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full gap-2 justify-between">
+<header class="z-40 flex w-full gap-2 justify-between font-mono text-dawn-subtle dark:text-moon-subtle">
   <nav role="navigation">
     <ul role="list" class="flex flex-row gap-2">
       <li>
         <a
           href="/"
           class:list={{
-            ["hover:underline"]: true,
-            ["underline"]: pathname === "/",
+            ["hover:text-dawn-text hover:dark:text-moon-text"]: true,
+            ["text-dawn-text dark:text-moon-text"]: pathname === "/",
           }}>Home</a
         >
       </li>
@@ -21,8 +21,8 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         <a
           href="/posts"
           class:list={{
-            ["hover:underline"]: true,
-            ["underline"]: pathname === "/posts",
+            ["hover:text-dawn-text hover:dark:text-moon-text"]: true,
+            ["text-dawn-text dark:text-moon-text"]: pathname === "/posts",
           }}>Posts</a
         >
       </li>
@@ -41,24 +41,24 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
   const body = document.body;
   if (theme === "dark") {
     body.classList.add("dark");
-    darkLabel.classList.remove("underline");
-    lightLabel.classList.add("underline");
+    darkLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+    lightLabel.classList.add("text-dawn-text", "dark:text-moon-text");
   }
   if (theme === "light") {
-    lightLabel.classList.remove("underline");
-    darkLabel.classList.add("underline");
+    lightLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+    darkLabel.classList.add("text-dawn-text", "dark:text-moon-text");
   }
   const themeToggle = document.getElementById("theme-toggle");
   themeToggle.addEventListener("click", () => {
     if (theme === "light") {
       theme = "dark";
-      darkLabel.classList.remove("underline");
-      lightLabel.classList.add("underline");
+      darkLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+      lightLabel.classList.add("text-dawn-text", "dark:text-moon-text");
       body.classList.add("dark");
     } else {
       theme = "light";
-      lightLabel.classList.remove("underline");
-      darkLabel.classList.add("underline");
+      lightLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+      darkLabel.classList.add("text-dawn-text", "dark:text-moon-text");
       body.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
@@ -67,27 +67,27 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
   const sansLabel = document.getElementById("sans-label");
   const serifLabel = document.getElementById("serif-label");
   if (font === "sans") {
-    sansLabel.classList.remove("underline");
-    serifLabel.classList.add("underline");
-    body.classList.add("sans");
+    sansLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+    serifLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    body.classList.add("font-serif");
   }
   if (font === "serif") {
-    serifLabel.classList.remove("underline");
-    sansLabel.classList.add("underline");
-    body.classList.remove("sans");
+    serifLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+    sansLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    body.classList.remove("font-serif");
   }
   const fontToggle = document.getElementById("font-toggle");
   fontToggle.addEventListener("click", () => {
     if (font === "sans") {
       font = "serif";
-      serifLabel.classList.remove("underline");
-      sansLabel.classList.add("underline");
-      body.classList.remove("sans");
+      serifLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+      sansLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      body.classList.remove("font-serif");
     } else {
       font = "sans";
-      sansLabel.classList.remove("underline");
-      serifLabel.classList.add("underline");
-      body.classList.add("sans");
+      sansLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
+      serifLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      body.classList.add("font-serif");
     }
     localStorage.setItem("font", font);
   });
