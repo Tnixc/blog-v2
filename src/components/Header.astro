@@ -4,15 +4,15 @@ import removeTrailingSlash from "@/utils/removeTrailingSlash";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
+<header class="z-40 flex w-full gap-2 justify-between">
   <nav role="navigation">
     <ul role="list" class="flex flex-row gap-2">
       <li>
         <a
           href="/"
           class:list={{
-            ["hover:opacity-100"]: true,
-            ["opacity-100"]: pathname === "/",
+            ["hover:underline"]: true,
+            ["underline"]: pathname === "/",
           }}>Home</a
         >
       </li>
@@ -21,35 +21,75 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         <a
           href="/posts"
           class:list={{
-            ["hover:opacity-100"]: true,
-            ["opacity-100"]: pathname === "/posts",
+            ["hover:underline"]: true,
+            ["underline"]: pathname === "/posts",
           }}>Posts</a
         >
       </li>
     </ul>
   </nav>
-  <button id="theme-toggle"><span>Light</span> / <span>Dark</span></button>
+  <div>
+  <button id="theme-toggle"><span id="light-label" >Light</span > <span >/</span> <span id="dark-label" >Dark</span></button>
+  <span>|</span>
+  <button id="font-toggle"><span id="sans-label" >Sans</span > <span >/</span> <span id="serif-label" >Serif</span></button>
+</div>
 </header>
 <script defer>
-  // Retrieve the theme value from local storage
   var theme = localStorage.getItem("theme") || "light";
-  // Set the theme class on the body element
+  const lightLabel = document.getElementById("light-label");
+  const darkLabel = document.getElementById("dark-label");
   const body = document.body;
   if (theme === "dark") {
     body.classList.add("dark");
+    darkLabel.classList.remove("underline");
+    lightLabel.classList.add("underline");
   }
-  // Add click event listener for theme toggle
+  if (theme === "light") {
+    lightLabel.classList.remove("underline");
+    darkLabel.classList.add("underline");
+  }
   const themeToggle = document.getElementById("theme-toggle");
   themeToggle.addEventListener("click", () => {
-    // Toggle the theme and update the body class
     if (theme === "light") {
       theme = "dark";
+      darkLabel.classList.remove("underline");
+      lightLabel.classList.add("underline");
       body.classList.add("dark");
     } else {
       theme = "light";
+      lightLabel.classList.remove("underline");
+      darkLabel.classList.add("underline");
       body.classList.remove("dark");
     }
-    // Update local storage with the new theme value
     localStorage.setItem("theme", theme);
   });
+  var font = localStorage.getItem("font") || "serif";
+  const sansLabel = document.getElementById("sans-label");
+  const serifLabel = document.getElementById("serif-label");
+  if (font === "sans") {
+    sansLabel.classList.remove("underline");
+    serifLabel.classList.add("underline");
+    body.classList.add("sans");
+  }
+  if (font === "serif") {
+    serifLabel.classList.remove("underline");
+    sansLabel.classList.add("underline");
+    body.classList.remove("sans");
+  }
+  const fontToggle = document.getElementById("font-toggle");
+  fontToggle.addEventListener("click", () => {
+    if (font === "sans") {
+      font = "serif";
+      serifLabel.classList.remove("underline");
+      sansLabel.classList.add("underline");
+      body.classList.remove("sans");
+    } else {
+      font = "sans";
+      sansLabel.classList.remove("underline");
+      serifLabel.classList.add("underline");
+      body.classList.add("sans");
+    }
+    localStorage.setItem("font", font);
+  });
+
 </script>

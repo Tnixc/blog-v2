@@ -14,13 +14,16 @@ const headTags = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <SEOTags {...headTags} />
-
   <body
-    class="mx-auto flex min-h-screen max-w-5xl flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+    class="h-screen bg-moon-rose"
   >
+  <div class="dark:bg-moon-base bg-dawn-base text-dawn-text dark:text-moon-text h-full flex justify-center py-16">
+    <div class="max-w-4xl w-full">
     <Header />
     <slot />
     <style is:global>
     </style>
   </body>
+</div>
+</div>
 </html>
