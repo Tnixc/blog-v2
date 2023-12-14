@@ -18,7 +18,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
     <div class=" w-full py-28 px-4 rounded-b-3xl" id="title">
       <div class="flex flex-col gap-8">
       </div>
-        <h1 class="text-3xl italic font-mono py-4">
+        <h1 class="text-2xl md:text-3xl italic font-mono py-4">
           blog.tnixc.space
         </h1>
         <h2
@@ -34,7 +34,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
       </header>
       {posts.length === 0 && <p>Wow, such empty</p>}
 
-      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+      <section class="flex gap-4 flex-wrap">
         {
           posts.length !== 0 &&
             posts

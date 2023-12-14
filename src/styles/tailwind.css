@@ -18,3 +18,7 @@
 .font-mono {
   font-family: "Jetbrains Mono", monospace;
 }
+::selection{
+  background-color: #f56565;
+  color: #fff;
+}

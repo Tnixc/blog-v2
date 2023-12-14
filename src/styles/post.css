@@ -1,39 +1,69 @@
-.post p {
-  @apply leading-7;
+#main{
+  & h1:first-of-type {
+    @apply mt-0 w-screen max-w-full text-3xl font-bold;
+  }
+  & h1:first-of-type:after {
+    @apply mb-0 mt-4 block h-1 w-80 rounded-full bg-gradient-to-r from-moon-foam via-moon-gold to-moon-iris;
+    content: "";
+  }
+  & h1 {
+    @apply mb-1 mt-6 text-4xl font-bold;
+  }
+  & h2 {
+    @apply mb-1 mt-6 text-3xl font-bold;
+  }
+  & h3 {
+    @apply mb-1 mt-6 text-2xl font-bold;
+  }
+  & h4 {
+    @apply mb-1 mt-6 text-xl font-bold;
+  }
+  & h5 {
+    @apply mb-1 mt-6 text-lg font-bold;
+  }
+  & h6 {
+    @apply mb-1 mt-6 text-lg font-bold;
+  }
+  & p {
+    @apply my-2 text-dawn-text dark:text-moon-text;
+  }
+  & li {
+    @apply my-2 ml-4 text-dawn-text dark:text-moon-text;
+  }
+  & bold,
+  & strong,
+  & i,
+  & em {
+    @apply text-dawn-gold dark:text-moon-gold;
+  }
+  & ol li {
+    @apply list-decimal;
+  }
+  & ul li {
+    @apply list-disc;
+  }
+  & pre {
+    @apply my-4 max-w-full overflow-auto rounded-md bg-dawn-overlay p-4 ring-2 ring-dawn-iris dark:bg-moon-overlay dark:ring-moon-iris ;
+  }
+  p code,
+  & li code {
+    @apply rounded-sm bg-dawn-surface dark:bg-moon-surface px-1 text-dawn-love dark:text-moon-love text-[15px];
+  }
+  & pre code {
+    @apply bg-transparent p-0;
+  }
+  & hr {
+    @apply my-8 border-gray-300 dark:border-gray-700;
+  }
+  & a {
+    @apply underline dark:text-moon-foam text-dawn-pine;
+  }
+  
+  & blockquote {
+    @apply my-4 border-l-4 border-dawn-pine bg-dawn-overlay py-2 pl-5 pr-2 dark:border-moon-pine dark:bg-moon-surface;
+  }
 }
 
-.post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-orange-500;
-}
-
-.post h2 {
-  @apply mt-6 text-3xl text-neutral-100;
-}
-
-.post h3 {
-  @apply mt-4 text-xl text-neutral-100;
-}
-
-.post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-red-500;
-}
-
-.post a {
-  @apply text-neutral-100 underline;
-}
-
-.post ul {
-  @apply list-disc;
-}
-
-.post blockquote {
-  @apply flex flex-row gap-2 before:block before:h-auto before:w-1 before:max-w-[1px] before:bg-red-400 before:content-[''];
-}
-
-.post pre {
-  @apply p-4;
-}
-
-.post pre > code {
-  @apply bg-transparent;
+.astro-code{
+  @apply text-sm;
 }
