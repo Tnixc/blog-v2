@@ -51,13 +51,10 @@ adplicat relinquentur inter, si pete. Magna constitit ore rediit et parentis
 pomaria lumina seque aura.
 
 ```css
-::after{
+::after {
   color: red;
 }
 ```
-
-
-
 
 [multae requirit primi]: http://heu.io/
 [si]: http://infelixlucina.net/mutati

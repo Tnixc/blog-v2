@@ -18,7 +18,7 @@ const { title, publishedAt, description, slug } = Astro.props;
   <div
     class="flex w-full flex-col justify-between gap-2 md:flex-row md:items-center"
   >
-    <p class="text-neutral-100">{title}</p>
+    <p class="text-lg">{title}</p>
     <div class="flex flex-row items-center gap-4">
       <p>{formatDate(publishedAt)}</p>
 
@@ -31,19 +31,19 @@ const { title, publishedAt, description, slug } = Astro.props;
       >
         <path
           d="M5.25 12.75L12.75 5.25"
-          stroke="#999999"
+          stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"></path>
         <path
           d="M5.25 5.25H12.75V12.75"
-          stroke="#999999"
+          stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"></path>
       </svg>
     </div>
   </div>
 
-  <p class="truncate">
+  <p class="truncate text-dawn-subtle dark:text-moon-subtle">
     {description}
   </p>
 </a>

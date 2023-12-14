@@ -11,16 +11,16 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 ---
 
 <Layout>
-  <main class="flex flex-col gap-20">
+  <main class="flex flex-col gap-2">
     <article
-      class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
+      class="flex flex-col py-10"
     >
-
+    <div class=" w-full py-28 px-4 rounded-b-3xl" id="title">
       <div class="flex flex-col gap-8">
-        <h1 class="text-3xl">
-          Tnixc's blog
+      </div>
+        <h1 class="text-3xl italic font-mono py-4">
+          blog.tnixc.space
         </h1>
-
         <h2
           class="w-auto max-w-[60ch] leading-6"
         />
@@ -30,7 +30,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
         <h3 class="text-lg">Latest posts</h3>
-        <a href="/posts">Posts</a>
+        <a href="/posts" class="font-mono text-dawn-gold opacity-80 dark:text-moon-gold hover:opacity-100 hover:underline">Posts</a>
       </header>
       {posts.length === 0 && <p>Wow, such empty</p>}
 
@@ -52,3 +52,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
     </article>
   </main>
 </Layout>
+<style is:global>
+  #title{
+    background:radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#f6c177 69.27%,#9ccfd8 100%)
+  }
+  .dark #title{
+    background:radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#9ccfd877 69.27%,#ea9d3477 100%)
+  }
+
+</style>

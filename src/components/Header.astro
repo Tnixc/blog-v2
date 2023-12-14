@@ -4,8 +4,8 @@ import removeTrailingSlash from "@/utils/removeTrailingSlash";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full gap-2 justify-between font-mono text-dawn-subtle dark:text-moon-subtle">
-  <nav role="navigation">
+<header class="z-40 flex md:flex-row flex-col md:bg-transparent dark:md:bg-transparent bg-dawn-base dark:bg-moon-base w-full gap-2 justify-around font-mono text-dawn-subtle dark:text-moon-subtle px-6 fixed md:top-6 top-0 overflow-x-scroll whitespace-nowrap right-0 left-0 overflow-y-visible">
+  <nav role="navigation" class="bg-dawn-base dark:bg-moon-base">
     <ul role="list" class="flex flex-row gap-2">
       <li>
         <a
@@ -28,7 +28,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
       </li>
     </ul>
   </nav>
-  <div>
+  <div class="bg-dawn-base dark:bg-moon-base shadow-lg">
   <button id="theme-toggle"><span id="light-label" >Light</span > <span >/</span> <span id="dark-label" >Dark</span></button>
   <span>|</span>
   <button id="font-toggle"><span id="sans-label" >Sans</span > <span >/</span> <span id="serif-label" >Serif</span></button>
@@ -36,8 +36,8 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
 </header>
 <script defer>
   var theme = localStorage.getItem("theme") || "light";
-  const lightLabel = document.getElementById("light-label");
-  const darkLabel = document.getElementById("dark-label");
+  const lightLabel = document.getElementById("dark-label");
+  const darkLabel = document.getElementById("light-label");
   const body = document.body;
   if (theme === "dark") {
     body.classList.add("dark");
