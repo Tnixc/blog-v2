@@ -50,5 +50,14 @@ hectora pendebat verba. Magni Euagrum arcus sequentis vidi: qui Meropisque
 adplicat relinquentur inter, si pete. Magna constitit ore rediit et parentis
 pomaria lumina seque aura.
 
+```css
+::after{
+  color: red;
+}
+```
+
+
+
+
 [multae requirit primi]: http://heu.io/
 [si]: http://infelixlucina.net/mutati
