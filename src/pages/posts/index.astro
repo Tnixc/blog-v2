@@ -15,7 +15,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
       {
         posts.map((post) => (
           <a
-            class="group flex flex-col gap-2 border-t-2 py-4 transition-all "
+            class="group flex flex-col gap-2 rounded-lg p-4 border-2 py-4 transition-all border-dawn-subtle dark:border-moon-subtle hover:shadow-lg"
             href={`/posts/${post.slug}`}
           >
             <div class="flex w-full items-center justify-between">
@@ -52,22 +52,22 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
   </main>
 </Layout>
 <style>
-  .border-t-2:nth-child(1n){
+  .group:hover:nth-child(1n){
     @apply border-dawn-love dark:border-moon-love;
   }
-  .border-t-2:nth-child(2n){
+  .group:hover:nth-child(2n){
     @apply border-dawn-gold dark:border-moon-gold;
   }
-  .border-t-2:nth-child(3n){
+  .group:hover:nth-child(3n){
     @apply border-dawn-pine dark:border-moon-pine;
   }
-  .border-t-2:nth-child(4n){
+  .group:hover:nth-child(4n){
     @apply border-dawn-foam dark:border-moon-foam;
   }
-  .border-t-2:nth-child(5n){
+  .group:hover:nth-child(5n){
     @apply border-dawn-iris dark:border-moon-iris;
   }
-  .border-t-2:nth-child(6n){
+  .group:hover:nth-child(6n){
     @apply border-dawn-rose dark:border-moon-rose;
   }
 
