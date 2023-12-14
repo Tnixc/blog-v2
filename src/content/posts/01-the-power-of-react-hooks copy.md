@@ -32,7 +32,4 @@ Yeah, just do that. It provides all the things above in a way that's easy to use
 
 ---
 
-<br>
-<br>
-
 I learned a lot of this from [Designing User Interfaces by Mike & Diana Malewicz](https://www.designingui.com/) and [Refactoring UI from the creators of Tailwind](https://www.refactoringui.com/). Both of these books cover similar concepts. It's good. Go read it. There will be more about UI to come.
