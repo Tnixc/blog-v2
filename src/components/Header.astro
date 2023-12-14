@@ -10,15 +10,15 @@ if (duplicate === "posts") {
 ---
 
 <header
-  class="z-40 flex md:flex-row flex-col md:bg-transparent dark:md:bg-transparent bg-dawn-base dark:bg-moon-base w-full gap-2 justify-between font-mono text-dawn-subtle dark:text-moon-subtle px-6 fixed md:top-6 top-0 overflow-x-scroll whitespace-nowrap overflow-y-visible p-2 max-w-4xl translate-">
+  class="z-40 flex md:flex-row flex-col w-full gap-2 justify-between font-mono text-dawn-text dark:text-moon-text px-6 fixed md:top-6 top-0 overflow-x-scroll whitespace-nowrap overflow-y-visible p-2 max-w-4xl translate-">
   <nav role="navigation" class="bg-dawn-base dark:bg-moon-base shadow-md">
     <ul role="list" class="flex flex-row gap-2 p-2">
       <li>
         <a
           href="/"
           class:list={{
-            ["hover:text-dawn-text hover:dark:text-moon-text"]: true,
-            ["text-dawn-text dark:text-moon-text"]: pathname === "/",
+            ["hover:text-dawn-gold hover:dark:text-moon-gold"]: true,
+            ["text-dawn-gold dark:text-moon-gold"]: pathname === "/",
           }}>Home</a
         >
       </li>
@@ -27,13 +27,13 @@ if (duplicate === "posts") {
         <a
           href="/posts"
           class:list={{
-            ["hover:text-dawn-text hover:dark:text-moon-text"]: true,
-            ["text-dawn-text dark:text-moon-text"]: pathname === "/posts",
+            ["hover:text-dawn-gold hover:dark:text-moon-gold"]: true,
+            ["text-dawn-iris dark:text-moon-iris"]: pathname === "/posts",
           }}>Posts</a
         >
       </li>
       <li>/</li>
-      <li class="text-dawn-text dark:text-moon-text md:block hidden">{duplicate}</li>
+      <li class="text-dawn-foam dark:text-moon-foam md:block hidden">{duplicate}</li>
     </ul>
   </nav>
   <div class="bg-dawn-base dark:bg-moon-base shadow-md p-2">
@@ -57,24 +57,24 @@ if (duplicate === "posts") {
   const body = document.body;
   if (theme === "dark") {
     body.classList.add("dark");
-    darkLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-    lightLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    darkLabel.classList.remove("text-dawn-foam", "dark:text-moon-foam");
+    lightLabel.classList.add("text-dawn-foam", "dark:text-moon-foam");
   }
   if (theme === "light") {
-    lightLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-    darkLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    lightLabel.classList.remove("text-dawn-foam", "dark:text-moon-foam");
+    darkLabel.classList.add("text-dawn-foam", "dark:text-moon-foam");
   }
   const themeToggle = document.getElementById("theme-toggle");
   themeToggle.addEventListener("click", () => {
     if (theme === "light") {
       theme = "dark";
-      darkLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-      lightLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      darkLabel.classList.remove("text-dawn-foam", "dark:text-moon-foam");
+      lightLabel.classList.add("text-dawn-foam", "dark:text-moon-foam");
       body.classList.add("dark");
     } else {
       theme = "light";
-      lightLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-      darkLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      lightLabel.classList.remove("text-dawn-foam", "dark:text-moon-foam");
+      darkLabel.classList.add("text-dawn-foam", "dark:text-moon-foam");
       body.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
@@ -83,26 +83,26 @@ if (duplicate === "posts") {
   const sansLabel = document.getElementById("sans-label");
   const serifLabel = document.getElementById("serif-label");
   if (font === "sans") {
-    sansLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-    serifLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    sansLabel.classList.remove("text-dawn-iris", "dark:text-moon-iris");
+    serifLabel.classList.add("text-dawn-iris", "dark:text-moon-iris");
     body.classList.add("font-serif");
   }
   if (font === "serif") {
-    serifLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-    sansLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+    serifLabel.classList.remove("text-dawn-iris", "dark:text-moon-iris");
+    sansLabel.classList.add("text-dawn-iris", "dark:text-moon-iris");
     body.classList.remove("font-serif");
   }
   const fontToggle = document.getElementById("font-toggle");
   fontToggle.addEventListener("click", () => {
     if (font === "sans") {
       font = "serif";
-      serifLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-      sansLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      serifLabel.classList.remove("text-dawn-iris", "dark:text-moon-iris");
+      sansLabel.classList.add("text-dawn-iris", "dark:text-moon-iris");
       body.classList.remove("font-serif");
     } else {
       font = "sans";
-      sansLabel.classList.remove("text-dawn-text", "dark:text-moon-text");
-      serifLabel.classList.add("text-dawn-text", "dark:text-moon-text");
+      sansLabel.classList.remove("text-dawn-iris", "dark:text-moon-iris");
+      serifLabel.classList.add("text-dawn-iris", "dark:text-moon-iris");
       body.classList.add("font-serif");
     }
     localStorage.setItem("font", font);
